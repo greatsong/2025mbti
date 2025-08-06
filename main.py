@@ -14,7 +14,11 @@ for col in df.columns[1:]:
 # 앱 제목 (이모지 활용)
 st.header("🧑🏻‍💻서울고 석리송 선생님과 함께하는! 👩🏻‍💻")
 st.title("🌍 국가별 MBTI 성향 분석 프로젝트 🔍")
-
+# 데이터 출처 표기
+st.markdown(
+    "📊 **데이터 출처**: [Kaggle - MBTI Types by Country](https://www.kaggle.com/datasets/yamaerenay/mbtitypes-full/data)",
+    help="MBTI 유형의 국가별 분포 데이터를 Kaggle에서 가져왔습니다."
+)
 # 국가 선택
 global_mbti_types = sorted(set(df.columns) - {"Country"})
 country = st.selectbox("🌏 국가를 선택하세요:", df["Country"].unique())
