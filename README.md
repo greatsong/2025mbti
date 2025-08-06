@@ -74,7 +74,7 @@ This serves as a data project example for the general public interested in:
 ## ⚡ How to Run
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 
 Or deploy directly on Streamlit Cloud.
