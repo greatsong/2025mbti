@@ -55,20 +55,10 @@ top_countries = df[['Country', selected_type]].sort_values(
     by=selected_type, ascending=False
 ).head(10)
 
-# 1위 국가명
-top_country_name = top_countries.iloc[0]['Country']
-
-# Altair 차트 생성
 chart2 = alt.Chart(top_countries).mark_bar().encode(
     x=alt.X(selected_type, title="비율(%)"),
     y=alt.Y('Country', sort='-x', title="국가"),
-    # 조건부 색상: 1위 국가만 빨강, 나머지는 viridis 컬러맵
-    color=alt.condition(
-        alt.datum.Country == top_country_name,
-        alt.value("red"),
-        alt.Color(selected_type, scale=alt.Scale(scheme="viridis"), legend=None)
-    ),
-    tooltip=['Country', selected_type]
+    color=alt.value("#0072B5")
 ).properties(
     width=600,
     height=400,
